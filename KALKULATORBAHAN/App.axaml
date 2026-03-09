@@ -1,15 +1,52 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="KALKULATORBAHAN.App"
              xmlns:local="using:KALKULATORBAHAN"
+             xmlns:sty="using:FluentAvalonia.Styling"
+             x:Class="KALKULATORBAHAN.App"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
-  
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="AppShellColor">#FFF6F7F9</Color>
+                    <Color x:Key="AppCardColor">#FFFFFFFF</Color>
+                    <Color x:Key="AppCardAltColor">#FFF9FAFB</Color>
+                    <Color x:Key="AppBorderColor">#140F172A</Color>
+                    <Color x:Key="AppHeroStartColor">#FFE5E7EB</Color>
+                    <Color x:Key="AppHeroEndColor">#FFE5E7EB</Color>
+                    <Color x:Key="AppAccentSoftColor">#FFF1F5F9</Color>
+                    <Color x:Key="AppAccentTextColor">#FF0F172A</Color>
+                    <Color x:Key="AppMutedTextColor">#FF64748B</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="AppShellColor">#FF0F172A</Color>
+                    <Color x:Key="AppCardColor">#FF111827</Color>
+                    <Color x:Key="AppCardAltColor">#FF1F2937</Color>
+                    <Color x:Key="AppBorderColor">#33E2E8F0</Color>
+                    <Color x:Key="AppHeroStartColor">#FF334155</Color>
+                    <Color x:Key="AppHeroEndColor">#FF334155</Color>
+                    <Color x:Key="AppAccentSoftColor">#FF1E293B</Color>
+                    <Color x:Key="AppAccentTextColor">#FFF8FAFC</Color>
+                    <Color x:Key="AppMutedTextColor">#FFCBD5E1</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <SolidColorBrush x:Key="AppShellBrush" Color="{DynamicResource AppShellColor}" />
+            <SolidColorBrush x:Key="AppCardBrush" Color="{DynamicResource AppCardColor}" />
+            <SolidColorBrush x:Key="AppCardAltBrush" Color="{DynamicResource AppCardAltColor}" />
+            <SolidColorBrush x:Key="AppBorderBrush" Color="{DynamicResource AppBorderColor}" />
+            <SolidColorBrush x:Key="AppAccentSoftBrush" Color="{DynamicResource AppAccentSoftColor}" />
+            <SolidColorBrush x:Key="AppAccentTextBrush" Color="{DynamicResource AppAccentTextColor}" />
+            <SolidColorBrush x:Key="AppMutedTextBrush" Color="{DynamicResource AppMutedTextColor}" />
+        </ResourceDictionary>
+    </Application.Resources>
+
     <Application.Styles>
-        <FluentTheme />
+        <sty:FluentAvaloniaTheme />
+        <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
     </Application.Styles>
 </Application>
